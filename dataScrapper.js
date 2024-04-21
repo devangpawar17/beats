@@ -6,7 +6,8 @@ const dataScrapper = async () => {
     try {
         // Launch a headful browser
         const browser = await puppeteer.launch({executablePath: '/usr/bin/chromium-browser',
-        args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+                                               headless: false});
 
         // Open a new page
         const page = await browser.newPage();
