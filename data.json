@@ -1,0 +1,39 @@
+[
+    {
+      "totalLikedBeats": "97",
+      "totalMp3Downloads": "189",
+      "followers": "131"
+    },
+    [
+      {
+        "beatTitle": "Beiman",
+        "plays": "23",
+        "likes": "1",
+        "downloads": "0"
+      },
+      {
+        "beatTitle": "MUNDE",
+        "plays": "42",
+        "likes": "2",
+        "downloads": "0"
+      },
+      {
+        "beatTitle": "AATMA",
+        "plays": "44",
+        "likes": "1",
+        "downloads": "2"
+      },
+      {
+        "beatTitle": "Sarvasva",
+        "plays": "70",
+        "likes": "4",
+        "downloads": "1"
+      },
+      {
+        "beatTitle": "DRILLER",
+        "plays": "73",
+        "likes": "2",
+        "downloads": "2"
+      }
+    ]
+  ]
