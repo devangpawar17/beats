@@ -4,10 +4,10 @@ let dataObj = { totalLikedBeats: 0, totalMp3Downloads: 0, followers: 0 }
 
 const dataScrapper = async () => {
     try {
-          console.log("gone to site")
+        
         // Launch a headful browser
         const browser = await puppeteer.launch({executablePath: '/usr/bin/chromium-browser',
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+      
                                                });
 
         // Open a new page
