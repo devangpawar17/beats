@@ -14,6 +14,7 @@ const dataScrapper = async () => {
 
         // Navigate to the website
         await page.goto('https://illpeoplemusic.com/');
+        console.log("gone to site")
 
         //screen size 
         await page.setViewport({ width: 1920, height: 1080 });
