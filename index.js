@@ -15,7 +15,7 @@ cron.schedule('0 * * * *', async() => {
   const data = await dataScrapper()
   const jsonData = JSON.stringify(data, null, 2);
   fs.writeFileSync('data.json', jsonData);
-  console.log('running a task every minute, last run - ',new Date(Date.now()).toLocaleString());
+  console.log('Scrapper cron job ran - ',new Date(Date.now()).toLocaleString());
   }catch(e){
     console.log(e);
   }
@@ -26,7 +26,7 @@ app.get('/runScrapper', async (req, res) => {
     const data = await dataScrapper()
     const jsonData = JSON.stringify(data, null, 2);
     fs.writeFileSync('data.json', jsonData);
-    console.log('running a task every minute, last run - ', new Date(Date.now()).toLocaleString());
+    console.log('Scrapper api hit at - ', new Date(Date.now()).toLocaleString());
     res.send("scarpped")
   } catch (e) {
     console.log(e);
