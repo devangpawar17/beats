@@ -4,18 +4,16 @@ let dataObj = { totalLikedBeats: 0, totalMp3Downloads: 0, followers: 0 }
 
 const dataScrapper = async () => {
     try {
-        
         // Launch a headful browser
-        const browser = await puppeteer.launch({executablePath: '/usr/bin/chromium-browser',
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
-                                               });
+        const browser = await puppeteer.launch({
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
+          });
 
         // Open a new page
         const page = await browser.newPage();
 
         // Navigate to the website
         await page.goto('https://illpeoplemusic.com/');
-      
 
         //screen size 
         await page.setViewport({ width: 1920, height: 1080 });
