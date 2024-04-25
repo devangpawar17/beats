@@ -41,7 +41,7 @@ const dataScrapper = async () => {
         await page.click('.mdc-button__label');
 
         await new Promise(resolve => setTimeout(resolve, 5000));
-
+ await new Promise(resolve => setTimeout(resolve, 5000));
         // Extract the number of downloads
         const divWithTotalMP3Downloads = await page.evaluate(() => {
             const divs = document.querySelectorAll('div.ipm-sell-card');
