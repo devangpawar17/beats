@@ -59,12 +59,14 @@ const dataScrapper = async () => {
             }
             return null;
         });
+        await new Promise(resolve => setTimeout(resolve, 5000));
 
         if (divWithTotalMP3Downloads) {
             dataObj.totalMp3Downloads = divWithTotalMP3Downloads.number
         } else {
             console.log('Div with Total MP3 downloads not found.');
         }
+        await new Promise(resolve => setTimeout(resolve, 5000));
 
         // Extract the total liked beats
         const divWithTotalLikedBeats = await page.evaluate(() => {
@@ -83,6 +85,7 @@ const dataScrapper = async () => {
             }
             return null;
         });
+        await new Promise(resolve => setTimeout(resolve, 5000));
 
         if (divWithTotalLikedBeats) {
             dataObj.totalLikedBeats = divWithTotalLikedBeats.number
