@@ -252,6 +252,7 @@ const dataScrapper = async () => {
 
     }
     catch (err) {
+        await browser.close();
         console.log(err);
     }
 };
