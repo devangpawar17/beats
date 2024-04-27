@@ -3,12 +3,13 @@ const puppeteer = require('puppeteer');
 let dataObj = { totalLikedBeats: 0, totalMp3Downloads: 0, followers: 0 }
 
 const dataScrapper = async () => {
-    try {
-        // Launch a headful browser
+     // Launch a headful browser
         const browser = await puppeteer.launch({
              executablePath: '/usr/bin/chromium-browser',
             args: ['--no-sandbox', '--disable-setuid-sandbox']
           });
+    try {
+       
 
         // Open a new page
         const page = await browser.newPage();
