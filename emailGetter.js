@@ -3,8 +3,9 @@ const xlsx = require('xlsx');
 
 const emailGetter = async () => {
     const browser = await puppeteer.launch({
-        headless: false
-    });
+             executablePath: '/usr/bin/chromium-browser',
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
+          });
 
     try {
         // Open a new page
