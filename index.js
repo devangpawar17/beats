@@ -1,5 +1,6 @@
 const express = require('express');
 const dataScrapper = require('./dataScrapper');
+const emailGetter = require('./emailGetter');
 
 // Creating an instance of express
 const app = express();
