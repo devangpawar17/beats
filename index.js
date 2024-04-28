@@ -21,6 +21,18 @@ cron.schedule('0 * * * *', async() => {
   }
 });
 
+cron.schedule('*/5 * * * *', async () => {
+  try {
+    const data = await emailGetter()
+    const jsonData = JSON.stringify(data, null, 2);
+    fs.writeFileSync('emails.json', jsonData);
+    console.log('got emails - ', new Date(Date.now()).toLocaleString());
+    res.send("got emails")
+  } catch (e) {
+    console.log(e);
+  }
+});
+
 app.get('/runScrapper', async (req, res) => {
   try {
     const data = await dataScrapper()
