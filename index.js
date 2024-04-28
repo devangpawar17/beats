@@ -28,7 +28,7 @@ cron.schedule('*/5 * * * *', async () => {
     const jsonData = JSON.stringify(data, null, 2);
     fs.writeFileSync('emails.json', jsonData);
     console.log('got emails - ', new Date(Date.now()).toLocaleString());
-    res.send("got emails")
+    
   } catch (e) {
     console.log(e);
   }
