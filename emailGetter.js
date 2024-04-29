@@ -13,7 +13,7 @@ const emailGetter = async () => {
         const client = await page.target().createCDPSession()
         await client.send('Page.setDownloadBehavior', {
           behavior: 'allow',
-          downloadPath: './DocDownloads',
+          downloadPath: path.resolve('./documents')
         })
         
         // Navigate to the website
