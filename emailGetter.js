@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const path =require('path')
 
 const emailGetter = async () => {
     const browser = await puppeteer.launch({
