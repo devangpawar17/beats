@@ -10,6 +10,12 @@ const emailGetter = async () => {
         // Open a new page
         const page = await browser.newPage();
 
+        const client = await page.target().createCDPSession()
+        await client.send('Page.setDownloadBehavior', {
+          behavior: 'allow',
+          downloadPath: './DocDownloads',
+        })
+        
         // Navigate to the website
         await page.goto('https://illpeoplemusic.com/');
 
