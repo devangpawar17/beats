@@ -1,5 +1,7 @@
 const puppeteer = require('puppeteer');
-const path =require('path')
+const xlsx = require('xlsx');
+const path = require('path')
+const fs = require('fs');
 
 const emailGetter = async () => {
     const browser = await puppeteer.launch({
