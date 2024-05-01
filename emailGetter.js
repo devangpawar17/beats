@@ -88,7 +88,54 @@ const emailGetter = async () => {
 
 
         await browser.close();
-        return ["emaiil1", "email2"]
+ // Load the Excel file
+
+        const folderPath = path.join(__dirname, 'documents');
+
+        // Read the contents of the folder
+        let excelFileName
+        fs.readdir(folderPath, (err, files) => {
+            if (err) {
+                console.error('Error reading folder:', err);
+                return;
+            }
+
+            // Filter out only Excel files
+            const excelFiles = files.filter(file => file.endsWith('.xlsx'));
+
+            if (excelFiles.length === 0) {
+                console.log('No Excel files found in the folder.');
+                return;
+            }
+
+            // Assuming there's only one Excel file, get its name
+            excelFileName = excelFiles[0];
+            console.log('Found Excel file:', excelFileName);
+
+        });
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        const workbook = xlsx.readFile(path.resolve(`./documents/${excelFileName}`));
+
+        // Get the first sheet
+        const firstSheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[firstSheetName];
+
+        // Convert the sheet to JSON
+        const data = xlsx.utils.sheet_to_json(worksheet, { header: 1, range: 2 });
+        console.log(data);
+
+        const delFilePath = path.resolve(`./documents/${excelFileName}`); // Specify the path to the file you want to delete
+
+        // Delete the file
+        fs.unlink(delFilePath, (err) => {
+            if (err) {
+                console.error('Error deleting file:', err);
+                return;
+            }
+            console.log('File deleted successfully');
+        });
+
+        return data
 
 
     }
