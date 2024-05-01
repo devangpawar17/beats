@@ -56,6 +56,16 @@ app.get('/getIPMData',(req,res)=>{
   }
 })
 
+//get emails from a json file
+app.get('/getEmails', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync('emails.json'))
+    res.json(data)
+  } catch (e) {
+    res.status(400).send(e)
+  }
+})
+
 // Starting the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
