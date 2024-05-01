@@ -16,7 +16,7 @@ const emailGetter = async () => {
           behavior: 'allow',
           downloadPath: path.resolve('./documents')
         })
-        
+        console.log(client)        
         // Navigate to the website
         await page.goto('https://illpeoplemusic.com/');
 
