@@ -11,7 +11,7 @@ const emailGetter = async () => {
         // Open a new page
         const page = await browser.newPage();
 
-        const client = await page.target().createCDPSession()
+        const client = await page.createCDPSession()
         await client.send('Page.setDownloadBehavior', {
           behavior: 'allow',
           downloadPath: path.resolve('./documents')
