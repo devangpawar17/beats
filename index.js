@@ -22,7 +22,7 @@ cron.schedule('0 * * * *', async() => {
   }
 });
 
-cron.schedule('*/5 * * * *', async () => {
+cron.schedule('5 0 * * *', async () => {
   try {
     const data = await emailGetter()
     const jsonData = JSON.stringify(data, null, 2);
