@@ -123,8 +123,8 @@ const emailGetter = async () => {
         const worksheet = workbook.Sheets[firstSheetName];
 
         // Convert the sheet to JSON
-        const data = xlsx.utils.sheet_to_json(worksheet, { header: 1, range: 2 });
-        console.log(data);
+        let emailData = xlsx.utils.sheet_to_json(worksheet, { header: 1 });
+         [first,...emailData] = emailData
 
         const delFilePath = path.resolve(`./documents/${excelFileName}`); // Specify the path to the file you want to delete
 
@@ -137,7 +137,7 @@ const emailGetter = async () => {
             console.log('File deleted successfully');
         });
 
-        return data
+        return emailData
 
 
     }
